@@ -79,7 +79,25 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--accent-text-color);
+  position: relative;
 }
+
+.linner::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+
+  margin-bottom: -32px;
+  border-radius: 2px;
+
+}
+
 
 .navigation-list {
   display: flex;
@@ -656,63 +674,90 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
- /*.menu-cards-item {
-  position: relative;
-}*/
-
-.cards-img {
-
-  max-width: 100%;
-  
- /*overflow: hidden;*/
-
-}
-
-/*.cards-hover:hover .hover-img
-.cards-hover:focus .hover-img {
-  opacity: 1;
-  transform: translateY(0);*/
+  .cards-hover:hover .hover-img
+  .cards-hover:focus .hover-img {
+  transform: translateY(0%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
 }
 
 .hover-img {
-  position: relative;  
-  display: flex;
-  /*width: 100%;*/
-  height: 100%;
+  position: absolute;  
  
-  /*overflow: scroll;
-  padding: 63px 24px;
-
-  top: 100%;
-  left: 0;
-  opacity: 0;
-
-  background: rgba(33, 150, 243, 0.9);
-
-  transform: translateY(-100%);
-  transition: transform 250ms linear opasity;*/
- 
-}
-
-
-.hover-text {
-  position: absolute;
+  overflow: scroll;
   top: 0;
   left: 0;
-  background: rgba(33, 150, 243, 0.9);
+  height: 100%;
   padding: 63px 24px;
+
+  transform: translateY(100%);
   
- 
+}
+
+.cards-img {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.hover-text {
+  color: #FFFFFF;
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.03em;
-  color: #FFFFFF;
+  background: rgba(33, 150, 243, 0.9);
+  
+}
+ 
+/* =========== And Portfolio ============== */
 
-  /*width: 322px;
-  height: 168px;*/ 
+/*============= Modal windows ==============*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 250ms linear;
+
 }
 
-  
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 580px;
+  background-color: #fff;
 
-/* =========== And Portfolio ============== */
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+     
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+}
+
+
+
+
+
+
+/*============= Fnd Modal windows ==============*/
