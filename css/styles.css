@@ -488,6 +488,7 @@ img {
 .clients-link:focus {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-color: var(--accent-color);
+  color: var(--accent-color);
   
 }
 
@@ -501,9 +502,10 @@ img {
 .clients-link:hover .clients-svg,
 .clients-link:focus .clients-svg {
   
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--color-white);
-  fill: var(--accent-color);
+  transition: transform 4250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 4250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /*color: var(--color-white);*/
+  /*fill: var(--accent-color);*/
+  color: var(--accent-color);
  
 }
 
