@@ -81,6 +81,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--accent-text-color);
   position: relative;
+  transition: var(--functcii--transition);
 }
 
 .linner::after {
@@ -104,6 +105,7 @@ img {
   display: flex;
   margin-left: auto;
   align-items: center;
+  
 }
 
 .tel-list:not(:last-child) {
@@ -130,6 +132,7 @@ img {
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--accent-too-color);
+  transition:var(--functcii--transition)
 }
 
 .tel-list {
@@ -277,6 +280,7 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  fill: var(--color-white);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
  
 }
@@ -290,12 +294,9 @@ img {
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
   fill: var(--color-white);
-  /*transition: var(--functcii--transition);
-  /*animation-duration: 5000ms;*/
+  color: currentColor;
+  /*fill: currentColor;*/
 
-  background-color: var(--accent-color);
-  color: var(--color-white);
-  
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -477,6 +478,7 @@ img {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+  fill: currentColor;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -490,6 +492,8 @@ img {
 .clients-svg {
   fill: #afb1b8;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  
 }
 
 .clients-link:hover .clients-svg,
@@ -498,6 +502,7 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--color-white);
   fill: var(--accent-color);
+ 
 
 }
 
@@ -613,6 +618,7 @@ img {
   color: var(--color-white);
   background-color: rgba(255, 255, 255, 0.1);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: currentColor;
 }
 
 .social-link:hover,
@@ -624,6 +630,7 @@ img {
 
 .social-icon {
   fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* =============== AND FUTTER ============= */
@@ -719,20 +726,24 @@ img {
 .menu-cards-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cards-hover {
-   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) box-shadow 5000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cards-hover:hover .hover-img, 
 .cards-hover:focus .hover-img {
   transform: translateY(0%); 
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
   
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
 }
+
+
 
 .hover-img {
   position: absolute;  
@@ -744,7 +755,7 @@ img {
   background: rgba(33, 150, 243, 0.9);
 
   transform: translateY(100%); 
-  transition: var(--functcii--transition); 
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
   
 }
 
@@ -774,8 +785,7 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: scale 250ms linear;
-
+  
   opacity: 1;
   transition: opascity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -807,12 +817,10 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
-
   
-     
 }
 
-.is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -820,7 +828,7 @@ img {
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 
